@@ -7,6 +7,14 @@ investigation: SAR detection, a backward OpenDrift/OpenOil hindcast to a probabl
 source region, deterministic AIS attribution, and a forward counterfactual that
 tests whether each candidate could actually reproduce the observed slick.
 
+The ML detector is now beyond its MVP baseline on held-out validation: the
+X1c + C3 + V1 pipeline reaches 81.7% object precision and 81.2% recall for
+slicks ≥10 ha, compared with 47.4% / 66.7% for the original E5 baseline.
+The ML detection service is a self-contained FastAPI/Docker application with
+X1c + C3 + V1 inference and georeferenced GeoJSON output. See the validation
+section in [`index.html`](index.html) for the model comparison and operating
+points; the Part III test set remains sealed.
+
 ## Contents
 
 | File | Description |
@@ -41,7 +49,6 @@ To produce a PDF, open the file in Chrome and print to PDF with
 14. Validation and results
 15. Limitations
 16. Comparison to prior work
-17. Roadmap
-18. Reproducibility
+17. Reproducibility
 
 Appendices: metrics and model maturity, glossary, references.
